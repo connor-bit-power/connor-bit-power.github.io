@@ -10,16 +10,33 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f8f9fa; /* Light background */
+            color: #333; /* Dark text */
+        }
+        .dark-mode {
+            background-color: #333; /* Dark background */
+            color: #f8f9fa; /* Light text */
+        }
+        .dark-mode .header {
+            background-color: #222; /* Darker shade for header */
+            color: #f8f9fa;
+        }
+        .dark-mode .project-template {
+            background-color: #444; /* Darker shade for project cards */
+            border-color: #666; /* Darker border color */
         }
         .header {
             background-color: #f8f9fa;
             padding: 20px;
             text-align: center;
         }
-        .header a {
+        .header a, .header button {
             text-decoration: none;
             color: #007bff;
             font-size: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
         .container {
             padding: 20px;
@@ -33,9 +50,9 @@
         }
         .project-image {
             width: 100%;
-            max-width: 500px; /* Adjust the width as needed */
-            display: block; /* This ensures the image is on its own line */
-            margin-bottom: 20px; /* Adds spacing between the image and the text */
+            max-width: 500px;
+            display: block;
+            margin-bottom: 20px;
         }
         .separator {
             border: 0;
@@ -44,12 +61,13 @@
             background-image: linear-gradient(to right, #ccc, #333, #ccc);
         }
     </style>
-    
 </head>
 <body>
     <div class="header">
         <h1>Connor Power</h1>
         <a href="whataboutism.html">Whataboutism</a>
+        <!-- Toggle Button -->
+        <button id="toggle-dark-mode">Toggle Dark Mode</button>
     </div>
     <div class="container">
         <!-- Project Template -->
@@ -63,21 +81,21 @@
             <h3>Tech Used</h3>
             <p>Python, FastAPI, SDXL, React, Radix-UI</p>
         </div>
-
         <hr class="separator">
-
-        <div class="project-template">
-            <h2>Stable Diffusion Image Generator - OpenAgents/GPUTopia</h2>    
-            <img src="assets/imagegen.png" alt="Project Image" class="project-image">
-            <h3>Description</h3>
-            <p>Built an interface that loads & connects the SDXL model to the GPUtopia decentralized gpu cluster via FastAPI.
-            React front end allows users to pay gpu providers in Bitcoin to send requests to gpu cluster and recieve completed SDXL images.
-            </p>
-            <h3>Tech Used</h3>
-            <p>Python, FastAPI, SDXL, React, Radix-UI</p>
-        </div>
-        <hr class="separator">
-        <!-- You can duplicate the project-template div to add more projects -->
+        <!-- Duplicate project-template divs as needed -->
     </div>
+    <script>
+        const toggleButton = document.getElementById('toggle-dark-mode');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('mode', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+
+        if(localStorage.getItem('mode') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+    </script>
 </body>
 </html>
