@@ -4,10 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whataboutism</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f9fa; /* Light background */
+            color: #333; /* Dark text */
+        }
+        .dark-mode {
+            background-color: #333; /* Dark background */
+            color: #f8f9fa; /* Light text */
+        }
+        h1, p {
+            padding: 0 20px;
+        }
+        button {
+            display: block;
+            margin: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
-<body>
+<body class="light-mode">
+    <button id="toggle-dark-mode">Toggle Dark Mode</button>
     <h1>My Blog</h1>
     <p>Welcome to my blog! Here I write about my projects, ideas, and experiences.</p>
     <!-- More blog content goes here -->
+
+
+
+
+    
+    <script>
+        const toggleButton = document.getElementById('toggle-dark-mode');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            localStorage.setItem('mode', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+
+        // Apply the user's preferred mode on page load
+        if(localStorage.getItem('mode') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+    </script>
 </body>
 </html>
