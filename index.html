@@ -74,9 +74,14 @@
         <h1>Connor Power</h1>
         
         <p>
+            Block: (HERE)
             Hey, the internet is full of interesting useless information. Here's some more. 
             <br>
-            
+            <br>
+            I've had the opportunity to work and gain expirience at Big Tech companies, extremely small startups
+            and independently as a developer. Through this I've been able to build some awesome products
+            and work with some amazing people.
+            <br>
             <br>
             Check out work I have done for:
         </p>
@@ -227,7 +232,7 @@
                     ROI Matrix for Enterprise SAAS Customers
                     & more.
                 </p>
-                <h3>Tech Used</h3>
+                
                 <p></p>
             </div>
         </div>
@@ -252,6 +257,16 @@
     </div>
 
     <script>
+        async function fetchBitcoinBlockHeight() {
+        try {
+            const response = await fetch('https://blockchain.info/q/getblockcount');
+            const blockHeight = await response.text();
+            document.getElementById('block-height').innerText = blockHeight;
+        } catch (error) {
+            console.error('Error fetching block height:', error);
+        }
+    }
+        
         function toggleSection(sectionId) {
             const section = document.getElementById(sectionId);
             const projectTitles = section.getElementsByClassName('project-title');
