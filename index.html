@@ -6,29 +6,18 @@
     <title>Connor Power</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             background-color: #f8f9fa; /* Light background */
             color: #333; /* Dark text */
         }
-        .dark-mode {
-            background-color: #333; /* Dark background */
-            color: #f8f9fa; /* Light text */
-        }
-        .dark-mode .header {
-            background-color: #222; /* Darker shade for header */
-            color: #f8f9fa;
-        }
-        .dark-mode .project-template {
-            background-color: #444; /* Darker shade for project cards */
-            border-color: #666; /* Darker border color */
-        }
         .header {
             background-color: #f8f9fa;
             padding: 20px;
             text-align: left;
+            margin-bottom: 10px;
         }
         .header a, .header button {
             text-decoration: none;
@@ -40,13 +29,14 @@
         }
         .container {
             padding: 20px;
+            margin-top: -40px;
         }
         .project-template {
-            margin-bottom: 20px;
+            margin-left: 30px;
             padding: 10px;
-            border: 1px solid #ddd;
+            border: 0px solid #ddd;
             border-radius: 5px;
-            overflow: auto;
+            display: none; /* Hidden by default */
         }
         .project-image {
             width: 100%;
@@ -54,102 +44,252 @@
             display: block;
             margin-bottom: 20px;
         }
-        .separator {
-            border: 0;
-            height: 3px;
-            background: #333;
+        .title {
+            cursor: pointer;
+            color: #242424;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
-
+        .project-title {
+            cursor: pointer;
+            color: #242424;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        .title:hover, .project-title:hover {
+            text-decoration: underline;
+        }
+        .project-title {
+            display: none; /* Initially hidden */
+        }
         .white-link, .white-link:visited, .white-link:hover, .white-link:active {
-        color: white;
-        text-decoration: none;
+            color: white;
+            text-decoration: none;
         }
-
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Connor Power</h1>
+        
+        <p>
+            Hey, the internet is full of interesting useless information. Here's some more. 
+            <br>
+            
+            <br>
+            Check out work I have done for:
+        </p>
     </div>
     <div class="container">
-        
-        <div class="project-template"> 
-                <h2>Stable Diffusion Image Generator for OpenAgents/GPUTopia</h2>                       
-            <img src="assets/imagegen.png" alt="Project Image" class="project-image">
-            <h3>Description</h3>
-            <p>App built for GPUtopia that loads and connects the SDXL model to the GPUtopia decentralized gpu cluster via FastAPI.
-            React front end allows users to pay gpu providers in Bitcoin to send requests to gpu cluster and recieve completed SDXL images.
+        <div class="title" onclick="toggleSection('yeezy')">YEEZY</div>
+        <div id="yeezy" class="section" style="margin-bottom: 10px;">
+            <p class="section-description" style="display:none; margin-left: 10px;">
+               I joined Yeezy as a software engineer working on the YZY app after Yeezy acquired our startup.
+               I also built on Yeezy.com and YEWS during my time at Yeezy. Below are some of the related
+               open source projects I built.    
             </p>
-            <h3>Tech Used</h3>
-            <p>Python, FastAPI, Stable Diffusion, React, Radix-UI</p>
+            <div class="project-title" onclick="toggleProject('yzyapp')">YZY App</div>
+            <div id="yzyapp" class="project-template">
+                <img src="assets/yzyapp.png" alt="Project Image" class="project-image" style="height: 400px; width: 180px;">
+                <h3>Description</h3>
+                <p>
+                    The YZY app is a mobile app that centralizes Yeezy's online presence, including the Yeezy SPLY store and YEWS.
+                    An inital beta with these features was developed before being acquired by Yeezy for further development of more features.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Frontend: React Native, Expo</p>
+                <p>Backend: Node.js, GraphQL</p>
+            </div>
+            <div class="project-title" onclick="toggleProject('yews')">YEWS Desktop (RAG Chatbot)</div>
+            <div id="yews" class="project-template">
+                <video src="assets/Untitled.mov" class="project-image" autoplay loop muted></video>
+                <h3>Description</h3>
+                <p>
+                    YEWS is a news site perfectly built for mobile. YEWS Desktop is a unique experience that allows users to view and interact with the
+                    daily YEWS through their browser, with the 3D calendar being the main method of interaction. Data is gathered and indexed in real time from
+                    a custom api accessing yews.news, as well as other relevant real time data such as the price of Bitcoin and the population of Earth.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Frontend: React, ThreeJS</p>
+                <p>Backend: Python, FastAPI, BeautifulSoup</p>
+            </div>
+            <div class="project-title" onclick="toggleProject('HY')">Hacker-YEWS</div>
+            <div id="HY" class="project-template">
+                <h3>Description</h3>
+                <p>
+                    Hacker-YEWS is an app I built that uses the data streaming from Hacker News and presents it in
+                    an elegant YEWS style mobile UI. This was mainly a fun project for me to mess around with the 
+                    specific the UI elements from YEWS and how they could be further developed and enhanced, along with
+                    the fact that HackerNews.com looks beyond atrocious like it is meant to scare potential YC applicants away.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Frontend: React Native, Expo</p>
+                <p>Backend: Node.js, GraphQL, HackerNewsAPI</p>
+            </div>
+        </div>
+
+        <div class="title" onclick="toggleSection('gputopia')">Open Agents</div>
+        <div id="gputopia" class="section">
+            <p class="section-description" style="display:none; margin-left: 10px;">
+                Open Agents is an decentralized GPU cluster that allows users to rent out 
+                their GPUs to other users to run AI models, with all payments conducted in Bitcoin. 
+                The project is open source and I was awarded for completing a few of the  
+                posted bounties. 
+             </p>
+            <div class="project-title" onclick="toggleProject('imagegen')">Stable Diffusion Image Generator</div>
+            <div id="imagegen" class="project-template">
+                <img src="assets/imagegen.png" alt="Project Image" class="project-image">
+                <h3>Description</h3>
+                <p>App built for GPUtopia that loads and connects the SDXL model to the GPUtopia decentralized gpu cluster via FastAPI.
+                React front end allows users to pay gpu providers in Bitcoin to send requests to gpu cluster and receive completed SDXL images.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Frontend: React, Next.JS</p>
+                <p>Backend: Python(FastAPI), HuggingFace API, Stable Diffusion</p>
+            </div>
+            <div class="project-title" onclick="toggleProject('GPUanalytics')">GPU Cluster Analytics</div>
+            <div id="GPUanalytics" class="project-template">
+                <h3>Description</h3>
+                <p>
+                    Gets analytics on the GPUTopia GPU cluster, including GPU details, 
+                    performance, and availability.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Frontend: React, Next.js</p>
+                <p>Backend: Node.js, GraphQL</p>
+            </div>
+        </div>
+
+
+        <div class="title" onclick="toggleSection('shopify')">Shopify Development</div>
+        <div id="shopify" class="section">
+            <div class="project-title" onclick="toggleProject('dice')">The Dice Kids</div>
+            <div id="dice" class="project-template">
+                <img src="assets/dicekids.png" alt="Project Image" class="project-image" style="height: 220px; width: 300px;">                
+                <p>
+                    
+                </p>
+            </div>
+            <div class="project-title" onclick="toggleProject('orange')">Orange Pill Earth</div>
+            <div id="orange" class="project-template">
+                <img src="assets/orangepillearth.png" alt="Project Image" class="project-image" style="height: 220px; width: 300px;">
+                <p>
+                   Shopify store for selling Bitcoin merchandise and accepting bitcoin for payments.
+                   Built with some custom features to accept Bitcoin payments and display live Bitcoin network data.
+                </p>
+            </div>
+            <div class="project-title" onclick="toggleProject('shaman')">Shaman Skincare</div>
+            <div id="shaman" class="project-template">
+                <img src="assets/shamanskincare.png" alt="Project Image" class="project-image" style="height: 220px; width: 300px;">
+                <p>
+                    One of the first Shopify stores I worked on. Fully built out custom 
+                    Shopify theme to replace underperforming site, as well as building in automations
+                    that leveraged existing customer data. In the follwing months the store saw
+                    a 100-150% increase in sales.
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="title" onclick="toggleSection('lab')">Home Lab</div>
+        <div id="lab" class="section">
+            <div class="project-title" onclick="toggleProject('llamacpp')">Llama.cpp server</div>
+            <div id="llamacpp" class="project-template">
+                <img src="assets/secret.png" alt="Project Image" class="project-image">
+                <h3>Description</h3>
+                <p>
+                    Currently building/tweaking for personal use, need to take stuff out before posting. 
+                    Llama.cpp is an open source framework for locally running open source LLMs.
+                    <br>
+                    The goal of the Llama.cpp server is to have a simple server that uses Llama.cpp 
+                    and Op*nAI request/response framework to load and interact with open source LLMs
+                    running on their local machine or home server. I've been purpose building it for myself,
+                    in a modular way that allows me to plug in new models, add funcitonality like TTS for controlling
+                    the server through voice and plug in whatever API services I want to use.
+                </p>
+                <h3>Tech Used</h3>
+                <p>Llama.cpp, Python, C++, FastAPI, NeetsAPI</p>
+            </div>
+
+            <div class="project-title" onclick="toggleProject('secret')">Other SUPER Secret Stuff</div>
+            <div id="secret" class="project-template">
+                <img src="assets/theministry.jpeg" alt="Project Image" class="project-image">
+                <h3>Other</h3>
+                <p>
+                    I've gotten the chance to work on some great projects specific to the company/team I was on at the time.
+                    <br>
+                    <br>
+                    These Include: 
+                    Analytics & Monitoring System for products running in GCP, 
+                    User Fraud Detector,
+                    ROI Matrix for Enterprise SAAS Customers
+                    & more.
+                </p>
+                <h3>Tech Used</h3>
+                <p></p>
+            </div>
         </div>
 
         
-
-        <div class="project-template">
-            <h2>YEWS Desktop Expirience - RAG Chatbot</h2>    
-            <video src="assets/Untitled.mov" class="project-image" autoplay loop muted></video>
-            <h3>Description</h3>
-            <p>
-             YEWS is a news site built for mobile. YEWS Desktop is a unique experience that allows users to view and interact with the
-             daily YEWS through their browser, with the 3D calendar being the main method of interaction. Data is gathered and indexed in real time from
-             a custom api accessing yews.news, as well as other relevant real time data such as the price of Bitcoin and the population of Earth.
-            </p>
-            <h3>Tech Used</h3>
-            <p>ThreeJS, FastAPI, React</p>
-        </div>
-
+        <p>
+            Places you can reach me:  
+        </p>
+        <div style="flex-direction: row;">
+            <a href="javascript:void(0);" onclick="copyToClipboard()" class="image-link" style="text-decoration: none">
+                <img src="assets/mail.png" style="width: 40px; height: 40px; margin-right: 20px;">
+            </a>
         
+            <a href="https://x.com/0xconYe" target="_blank" style="text-decoration: none">
+                <img src="assets/xcom.png" style="width: 40px; height: 40px; margin-right: 20px;">
+            </a>
         
-        <div class="project-template">
-            <h2>Llama.cpp server</h2>    
-            <img src="assets/secret.png" alt="Project Image" class="project-image">
-            <h3>Description</h3>
-            <p>
-             Currently building/tweaking for personal use, need to take stuff out before posting. Llama.cpp is an open source framework for locally running open source LLMs.
-             <br>
-             The goal of the Llama.cpp server is to have a simple server that uses Llama.cpp and Op*nAI request/response framework
-             for users to load and interact with open source LLMs runnning on their local machine or home server.
-            </p>
-            <h3>Tech Used</h3>
-            <p>Llama.cpp, Python, C++, FastAPI, NeetsAPI</p>
-        </div>
-
-        
-
-        <div class="project-template">
-            <h2>SUPER Secret Other Stuff</h2>    
-            <img src="assets/theministry.jpeg" alt="Project Image" class="project-image">
-            <h3>Honorable Mentions</h3>
-            <p>
-             Many projects I've worked on remain confidential to the oligarchs who kept me fat and happy while I made them, but are still worth mentioning.
-             <br>
-             <br>
-             These Include: Shopify store frontend, Product Analytics & Monitoring System (using GCP), 
-             User Fraud Detector (using Mean Anomaly Detection),
-             ROI Matrix for Enterprise Software Customers,
-             & more.
-            </p>
-            <h3>Tech Used</h3>
-            <p></p>
-        </div>
-
-        
-
+            <a href="https://github.com/connor-bit-power" target="_blank">
+                <img src="assets/github.png" style="width: 40px; height: 40px; margin-right: 20px;">
+            </a>
+        </div>    
     </div>
 
-
     <script>
-        const toggleButton = document.getElementById('toggle-dark-mode');
-        const body = document.body;
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            const projectTitles = section.getElementsByClassName('project-title');
+            const projectTemplates = section.getElementsByClassName('project-template');
+            const sectionDescription = section.querySelector('.section-description');
+            let isVisible = false;
+            for (let i = 0; i < projectTitles.length; i++) {
+                if (projectTitles[i].style.display === 'block') {
+                    isVisible = true;
+                }
+                projectTitles[i].style.display = (projectTitles[i].style.display === 'none' || projectTitles[i].style.display === '') ? 'block' : 'none';
+            }
+            if (isVisible) {
+                for (let i = 0; i < projectTemplates.length; i++) {
+                    projectTemplates[i].style.display = 'none';
+                }
+            }
+            if (sectionDescription) {
+                sectionDescription.style.display = isVisible ? 'none' : 'block';
+            }
+        }
 
-        toggleButton.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('mode', body.classList.contains('dark-mode') ? 'dark' : 'light');
-        });
+        function toggleProject(projectId) {
+            const projectContent = document.getElementById(projectId);
+            if (projectContent.style.display === 'none' || projectContent.style.display === '') {
+                projectContent.style.display = 'block';
+            } else {
+                projectContent.style.display = 'none';
+            }
+        }
 
-        if(localStorage.getItem('mode') === 'dark') {
-            body.classList.add('dark-mode');
+        function copyToClipboard() {
+            const email = "cmpower560@gmail.com";
+            navigator.clipboard.writeText(email).then(function() {
+                alert("Email address copied to clipboard: " + email);
+            }, function(err) {
+                alert("Could not copy text: ", err);
+            });
         }
     </script>
 </body>
