@@ -67,6 +67,10 @@
             color: white;
             text-decoration: none;
         }
+        video {
+            max-width: 300px; /* Adjust this value to make the video smaller */
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +100,7 @@
             </p>
             <div class="project-title" onclick="toggleProject('yzyapp')">YZY App</div>
             <div id="yzyapp" class="project-template">
-                
+                <video src="assets/yzyapp.MOV" style="max-height: 300px;" autoplay loop muted></video>
                 <h3>Description</h3>
                 <p>
                     The YZY app is a mobile app that centralizes Yeezy's online presence, including the Yeezy SPLY store and YEWS.
@@ -104,7 +108,7 @@
                 </p>
                 <h3>Tech Used</h3>
                 <p>Frontend: React Native, Expo</p>
-                <p>Backend: Node.js, GraphQL</p>
+                <p>Backend: Node.js, Nest.js, GraphQL</p>
             </div>
             <div class="project-title" onclick="toggleProject('yews')">YEWS Desktop (RAG Chatbot)</div>
             <div id="yews" class="project-template">
@@ -121,6 +125,7 @@
             </div>
             <div class="project-title" onclick="toggleProject('HY')">Hacker-YEWS</div>
             <div id="HY" class="project-template">
+                <img src="assets/hyews.png" alt="Project Image" class="project-image" style="height: 100px; width: 100px;">
                 <h3>Description</h3>
                 <p>
                     Hacker-YEWS is an app I built that uses the data streaming from Hacker News and presents it in
