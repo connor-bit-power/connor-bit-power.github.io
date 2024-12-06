@@ -28,9 +28,22 @@
             border: none;
             cursor: pointer;
         }
-        .container {
+        .containers {
+            flex-direction: column;
+        }
+        .leftcontainer {
             padding: 20px;
             margin-top: -40px;
+            background-color: #007bff;
+            max-width: 50%;
+            align-items: start;
+        }
+        .rightcontainer {
+            padding: 20px;
+            margin-top: -40px;
+            background-color: #242424;
+            max-width: 50%;
+            align-items: end;
         }
         .project-template {
             margin-left: 30px;
@@ -80,18 +93,27 @@
         
         <p>
             
-            Hey, the internet is full of useless interesting information. Here's some more. 
+            Hey, the internet is full of useless interesting information. Here's some more: 
             <br>
             <br>
-            I've had the opportunity to work and gain expirience at Big Tech companies, extremely small startups
-            and independently as a developer. Through this I've been able to build some awesome products
-            and work with some amazing people.
+            I've had the opportunity to work across Big Tech companies, extremely small startups
+            and independently as a developer. Through this I've been able to gain priceless expirience,
+            build some awesome products and work with some amazing people.
             <br>
             <br>
             Check out work I have done for:
         </p>
     </div>
-    <div class="container">
+
+    <div class="containers">
+        <div class="rightcontainer">
+            stff herer
+        </div>
+        </div>
+
+
+    <div class="leftcontainer">
+        <p>What I've Done</p>
         <div class="title" onclick="toggleSection('yeezy')">YEEZY</div>
         <div id="yeezy" class="section" style="margin-bottom: 10px;">
             <p class="section-description" style="display:none; margin-left: 10px;">
@@ -281,6 +303,7 @@
                 <img src="assets/github.png" style="width: 40px; height: 40px; margin-right: 20px;">
             </a>
         </div>    
+    </div>
     </div>
 
     <script>
