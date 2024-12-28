@@ -128,4 +128,20 @@ video {
 
 .theme-text {
     display: none;
+}
+
+figure {
+    margin: 2em 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 0.5em;
 } 

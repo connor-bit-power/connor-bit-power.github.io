@@ -44,17 +44,17 @@
 
     <div id="blog-content" class="nav-content" style="display: none; margin: 20px; text-align: left;">
         <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
-            <a href="bottom.html" style="text-decoration: none; color: inherit;">Exit</a>
+            <a href="https://conye.substack.com/p/exit" style="text-decoration: none; color: inherit;">Exit</a>
             <div style="font-size: 0.8em; color: var(--text-color); opacity: 0.7; margin-top: 4px;">February 10, 2023</div>
         </li>
         
         <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
-            <a href="bottom.html" style="text-decoration: none; color: inherit;">₿ottom?</a>
+            <a href="writing/bottom/bottom.html" style="text-decoration: none; color: inherit;">₿ottom?</a>
             <div style="font-size: 0.8em; color: var(--text-color); opacity: 0.7; margin-top: 4px;">October 22, 2022</div>
         </li>
         
         <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
-            <a href="bottom.html" style="text-decoration: none; color: inherit;">How Bitcoin Mining will Fix The Energy Grid For Everyone Everywhere Forever</a>
+            <a href="https://conye.substack.com/p/how-bitcoin-mining-will-fix-the-energy" style="text-decoration: none; color: inherit;">How Bitcoin Mining will Fix Energy For Everyone Everywhere Forever</a>
             <div style="font-size: 0.8em; color: var(--text-color); opacity: 0.7; margin-top: 4px;">December 6, 2021</div>
         </li>
     </div>
@@ -135,16 +135,12 @@
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             html.setAttribute('data-theme', newTheme);
-            
-            // Save preference to localStorage
             localStorage.setItem('theme', newTheme);
         }
 
-        // Check for saved theme preference
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        });
+        // Apply theme immediately when script runs
+        const savedTheme = localStorage.getItem('theme') || 'dark'; // Default to dark for index.html
+        document.documentElement.setAttribute('data-theme', savedTheme);
 
         function toggleNav(sectionId) {
             const sections = ['work', 'blog'];
