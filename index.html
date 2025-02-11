@@ -13,20 +13,21 @@
     </button>
 
 
-        <p style="margin-top: 40px; margin-left: 15px; font-weight: 600; letter-spacing: 0.02em;">Connor Power</p>
-
+        <p style="margin-top: 40px; margin-left: 20px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: 40px;">Connor Power</p>
 
 
 
 
     <div style="display: flex; justify-content: left; margin-top: 20px; margin-left: 0px;">
-        <a href="javascript:void(0);" onclick="toggleNav('work')" id="work-link" class="nav-link" style="text-decoration: none; color: inherit; padding: 5px 15px; border-radius: 15px; border: 2px solid transparent;">work</a>
         <a href="javascript:void(0);" onclick="toggleNav('blog')" id="blog-link" class="nav-link" style="text-decoration: none; color: inherit; padding: 5px 15px; border-radius: 15px; border: 2px solid transparent; display: none;">writing</a>
     </div>
 
-    <div id="work-content" class="nav-content" style="display: none; margin: 20px; text-align: left;">
-        <li style="list-style-type: none;  margin-top: 20px; font-weight: 500;">
-            <a href="https://www.0-th.com" target="_blank" style="text-decoration: none; color: inherit;">0<sup>th</sup></a>
+    <div id="work-content" class="nav-content" style="margin: 20px; text-align: left;">
+        <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
+            <a href="https://doge-tracker.com" target="_blank" style="text-decoration: none; color: inherit;">D.O.G.E.</a>
+        </li>
+        <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
+            <a href="https://getquant.app" target="_blank" style="text-decoration: none; color: inherit;">Quant</a>
         </li>
         <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
             YEEZY
@@ -41,7 +42,7 @@
             <a href="https://www.gputopia.ai" target="_blank" style="text-decoration: none; color: inherit;">GPUTopia</a>
         </li>
         <li style="list-style-type: none; margin-top: 20px; font-weight: 500;">
-            <a href="https://www.thestartup.com" target="_blank" style="text-decoration: none; color: inherit;">TheStartup.com</a>
+            TheStartup.com (acquired)
         </li>
     </div>
 
@@ -64,12 +65,12 @@
 
     
         
-        <div style="flex-direction: row; margin-top: 40px; margin-left: 10px;">
+        <div style="flex-direction: row; margin-top: 40px; margin-left: 15px;">
             <a href="javascript:void(0);" onclick="copyToClipboard()" class="image-link" style="text-decoration: none">
                 <img src="assets/mail.png" style="width: 40px; height: 40px; margin-right: 20px;">
             </a>
         
-            <a href="https://x.com/0xconYe" target="_blank" style="text-decoration: none">
+            <a href="https://x.com/BITP0WER" target="_blank" style="text-decoration: none">
                 <img src="assets/xcom.png" style="width: 40px; height: 40px; margin-right: 20px;">
             </a>
         
@@ -155,16 +156,19 @@
                 if (section === sectionId) {
                     if (content.style.display === 'none') {
                         content.style.display = 'block';
-                        link.style.borderColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
                     } else {
                         content.style.display = 'none';
-                        link.style.borderColor = 'transparent';
                     }
                 } else {
                     content.style.display = 'none';
-                    link.style.borderColor = 'transparent';
                 }
+                link.style.borderColor = 'transparent';
             });
+        }
+
+        function toggleQuantDetails() {
+            const details = document.getElementById('quant-details');
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 </body>
